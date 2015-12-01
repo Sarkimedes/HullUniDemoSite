@@ -178,6 +178,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MySqlConfiguration.cs" />
+    <Compile Include="Models\MySqlHistoryContext.cs" />
     <Compile Include="Models\Score.cs" />
     <Compile Include="Models\SpaceCheeseDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -72,7 +72,7 @@ namespace HullUniDemoSite.Controllers
 
         // POST: api/Scores
         [ResponseType(typeof(Score))]
-        public IHttpActionResult PostScore(Score score)
+        public IHttpActionResult PostScore([FromBody] Score score)
         {
             if (!ModelState.IsValid)
             {
