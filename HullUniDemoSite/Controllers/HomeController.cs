@@ -15,8 +15,8 @@ namespace HullUniDemoSite.Controllers
 
             using (var db = new SpaceCheeseDb())
             {
-                var scores = db.Scores.Take(5);
-                ViewBag.Scores = scores.ToList();
+                var scores = db.Scores;
+                ViewBag.Scores = scores.ToList().OrderBy(x => x.Moves).Take(5);
                 return View();
             }
         }
