@@ -72,7 +72,7 @@ namespace HullUniDemoSite.Controllers
 
         // POST: api/Scores
         [ResponseType(typeof(Score))]
-        public IHttpActionResult PostScore([FromBody] Score score)
+        public IHttpActionResult PostScore(Score score)
         {
             if (!ModelState.IsValid)
             {
@@ -84,6 +84,8 @@ namespace HullUniDemoSite.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = score.Id }, score);
         }
+
+
 
         // DELETE: api/Scores/5
         [ResponseType(typeof(Score))]

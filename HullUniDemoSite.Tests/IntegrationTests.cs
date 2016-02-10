@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web.Mvc;
 using HullUniDemoSite.Controllers;
 using HullUniDemoSite.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -19,6 +20,18 @@ namespace HullUniDemoSite.Tests
 
             var newScoreCount = controller.GetScores().Count();
             Assert.AreEqual(oldScoreCount + 1, newScoreCount);
+        }
+
+        [TestMethod]
+        public void HomeController_ViewBagScoresMatchesScoreCount_AfterScoreIsAddedToDB()
+        {
+            var scoresController = new ScoresController();
+            scoresController.PostScore(new Score() { PlayerName = "Jim", Moves = 8 });
+            var scoreCount = scoresController.GetScores().Count();
+            var homeController=  new HomeController();
+            var viewBagScores = homeController.Index() as ViewResult;
+            Assert.AreEqual(viewBagScores.ViewBag.Scores.Count, scoreCount);
+
         }
     }
 }

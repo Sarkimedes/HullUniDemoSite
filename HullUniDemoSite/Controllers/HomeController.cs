@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HullUniDemoSite.Models;
 
 namespace HullUniDemoSite.Controllers
 {
@@ -12,7 +13,12 @@ namespace HullUniDemoSite.Controllers
         {
             ViewBag.Title = "Home Page";
 
-            return View();
+            using (var db = new SpaceCheeseDb())
+            {
+                var scores = db.Scores.Take(5);
+                ViewBag.Scores = scores.ToList();
+                return View();
+            }
         }
     }
 }

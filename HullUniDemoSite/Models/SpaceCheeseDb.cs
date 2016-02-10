@@ -12,7 +12,7 @@ namespace HullUniDemoSite.Models
     {
         public SpaceCheeseDb() : base("SpaceCheeseDb")
         {
-            Database.SetInitializer<SpaceCheeseDb>(new DropCreateDatabaseAlways<SpaceCheeseDb>());
+            //Database.SetInitializer<SpaceCheeseDb>(new DropCreateDatabaseAlways<SpaceCheeseDb>());
         }
 
         public  DbSet<Score> Scores { get; set; }

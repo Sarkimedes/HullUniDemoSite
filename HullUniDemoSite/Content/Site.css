@@ -15,3 +15,22 @@ select,
 textarea {
     max-width: 280px;
 }
+
+tr > th {
+    padding-top: 10px;
+    padding-bottom: 0;
+    padding-right: 20px;
+    margin-right: 20px;
+}
+
+tr > td {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 20px;
+    margin-right: 20px;
+}
+
+#new-score-div {
+    padding-top: 20px;
+    border-top: lightgray;
+}
